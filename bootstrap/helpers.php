@@ -1,3 +1,6 @@
 <?php
 
-require __DIR__ . '/helpers.php';
+function route_class()
+{
+    return str_replace('.', '_', Route::currentRouteName());
+}
