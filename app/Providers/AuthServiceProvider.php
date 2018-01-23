@@ -24,10 +24,13 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
-        $this->registerPolicies();
+     public function boot()
+     {
+         $this->registerPolicies();
 
-        //
-    }
+         \Horizon::auth(function ($request) {
+             // 是否是站长
+             return \Auth::user()->hasRole('Founder');
+         });
+     }
 }
