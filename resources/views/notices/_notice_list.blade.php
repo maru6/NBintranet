@@ -12,7 +12,7 @@
 
                     <div class="media-heading">
                         <a href="{{ route('notices.show', [$notice->id]) }}" title="{{ $notice->title }}">
-                            {{ $notice->title }}
+                             {{ $notice->title }}
                         </a>
                         <a class="pull-right" href="{{ route('notices.show', [$notice->id]) }}" >
                             <span class="badge"> 回复{{ $notice->reply_count }} </span>
@@ -21,7 +21,7 @@
 
                     <div class="media-body meta">
 
-                        <a href="#" title="{{ $notice->department->name }}">
+                        <a href="{{ route('departments.show', $notice->department->id) }}" title="{{ $notice->department->name }}">
                             <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                              {{ $notice->department->name }}
                         </a>

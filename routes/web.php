@@ -34,4 +34,5 @@ Route::resource('notifications', 'NotificationsController', ['only' => ['index']
 
 Route::get('permission-denied', 'PagesController@permissionDenied')->name('permission-denied');
 
-Route::resource('notices', 'NoticesController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('notices', 'NoticesController', ['only' => ['index', 'show','create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('departments', 'DepartmentsController', ['only' => ['show']]);

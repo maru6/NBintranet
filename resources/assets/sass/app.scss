@@ -18,6 +18,10 @@ body {
     margin-bottom: 40px;
     margin-top: 0px;
 
+    .dropdown {
+        padding: 0px 0px;
+    }
+
     .dropdown-menu {
     padding: 0px;
 
@@ -118,9 +122,9 @@ body {
 
 
 
-/* Topic Index Page */
-.categories-show-page, .topics-index-page, .root-page, .notices-index-page{
-    .topic-list, .notices-list {
+/* Topic,Notice Index Page */
+.categories-show-page, .topics-index-page, .root-page, .notices-index-page, .departments-show-page {
+    .topic-list, .notice-list {
         .nav > li > a {
             position: relative;
             display: block;

@@ -6,6 +6,14 @@
 
 <div class="row">
     <div class="col-lg-9 col-md-9 notice-list">
+
+        @if (isset($department))
+            <div class="alert alert-info" role="alert">
+                {{ $department->name }} ：{{ $department->description }}
+            </div>
+        @endif
+
+
         <div class="panel panel-default">
 
             <div class="panel-heading">
