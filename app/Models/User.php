@@ -49,6 +49,11 @@ class User extends Authenticatable
         return $this->hasMany(Topic::class);
     }
 
+    public function notice()
+    {
+        return $this->hasMany(notice::class);
+    }
+
     public function isAuthorOf($model)
     {
         return $this->id == $model->user_id;
@@ -57,6 +62,11 @@ class User extends Authenticatable
     public function replies()
     {
         return $this->hasMany(Reply::class);
+    }
+
+    public function category()
+    {
+        return $this->hasMany(category::class);
     }
 
     public function markAsRead()

@@ -8366,6 +8366,10 @@ body {
   margin-top: 0px;
 }
 
+.navbar-static-top .dropdown {
+  padding: 0px 0px;
+}
+
 .navbar-static-top .dropdown-menu {
   padding: 0px;
 }
@@ -8459,11 +8463,18 @@ body {
   margin: 6px 0;
 }
 
-/* Topic Index Page */
+/* Topic,Notice Index Page */
 
 .categories-show-page .topic-list .nav > li > a,
+.categories-show-page .notice-list .nav > li > a,
 .topics-index-page .topic-list .nav > li > a,
-.root-page .topic-list .nav > li > a {
+.topics-index-page .notice-list .nav > li > a,
+.root-page .topic-list .nav > li > a,
+.root-page .notice-list .nav > li > a,
+.notices-index-page .topic-list .nav > li > a,
+.notices-index-page .notice-list .nav > li > a,
+.departments-show-page .topic-list .nav > li > a,
+.departments-show-page .notice-list .nav > li > a {
   position: relative;
   display: block;
   padding: 5px 14px;
@@ -8471,33 +8482,68 @@ body {
 }
 
 .categories-show-page .topic-list a,
+.categories-show-page .notice-list a,
 .topics-index-page .topic-list a,
-.root-page .topic-list a {
+.topics-index-page .notice-list a,
+.root-page .topic-list a,
+.root-page .notice-list a,
+.notices-index-page .topic-list a,
+.notices-index-page .notice-list a,
+.departments-show-page .topic-list a,
+.departments-show-page .notice-list a {
   color: #444444;
 }
 
 .categories-show-page .topic-list .meta,
+.categories-show-page .notice-list .meta,
 .topics-index-page .topic-list .meta,
-.root-page .topic-list .meta {
+.topics-index-page .notice-list .meta,
+.root-page .topic-list .meta,
+.root-page .notice-list .meta,
+.notices-index-page .topic-list .meta,
+.notices-index-page .notice-list .meta,
+.departments-show-page .topic-list .meta,
+.departments-show-page .notice-list .meta {
   font-size: 0.9em;
   color: #b3b3b3;
 }
 
 .categories-show-page .topic-list .meta a,
+.categories-show-page .notice-list .meta a,
 .topics-index-page .topic-list .meta a,
-.root-page .topic-list .meta a {
+.topics-index-page .notice-list .meta a,
+.root-page .topic-list .meta a,
+.root-page .notice-list .meta a,
+.notices-index-page .topic-list .meta a,
+.notices-index-page .notice-list .meta a,
+.departments-show-page .topic-list .meta a,
+.departments-show-page .notice-list .meta a {
   color: #b3b3b3;
 }
 
 .categories-show-page .topic-list .badge,
+.categories-show-page .notice-list .badge,
 .topics-index-page .topic-list .badge,
-.root-page .topic-list .badge {
+.topics-index-page .notice-list .badge,
+.root-page .topic-list .badge,
+.root-page .notice-list .badge,
+.notices-index-page .topic-list .badge,
+.notices-index-page .notice-list .badge,
+.departments-show-page .topic-list .badge,
+.departments-show-page .notice-list .badge {
   background-color: #d8d8d8;
 }
 
 .categories-show-page .topic-list hr,
+.categories-show-page .notice-list hr,
 .topics-index-page .topic-list hr,
-.root-page .topic-list hr {
+.topics-index-page .notice-list hr,
+.root-page .topic-list hr,
+.root-page .notice-list hr,
+.notices-index-page .topic-list hr,
+.notices-index-page .notice-list hr,
+.departments-show-page .topic-list hr,
+.departments-show-page .notice-list hr {
   margin-top: 12px;
   margin-bottom: 12px;
   border: 0;
@@ -8507,7 +8553,8 @@ body {
 /* Topic Show Page */
 
 .simditor-body,
-.topic-body {
+.topic-body,
+.notic-body {
   font-size: 15px;
   line-height: 1.3;
   overflow: hidden;
@@ -8516,52 +8563,62 @@ body {
 }
 
 .simditor-body a,
-.topic-body a {
+.topic-body a,
+.notic-body a {
   background: transparent;
 }
 
 .simditor-body a:active,
 .simditor-body a:hover,
 .topic-body a:active,
-.topic-body a:hover {
+.topic-body a:hover,
+.notic-body a:active,
+.notic-body a:hover {
   outline: 0;
 }
 
 .simditor-body ol li,
-.topic-body ol li {
+.topic-body ol li,
+.notic-body ol li {
   margin: 8px 0;
 }
 
 .simditor-body pre[class*=language-],
-.topic-body pre[class*=language-] {
+.topic-body pre[class*=language-],
+.notic-body pre[class*=language-] {
   margin: 1.2em 0 !important;
 }
 
 .simditor-body strong,
-.topic-body strong {
+.topic-body strong,
+.notic-body strong {
   font-weight: bold;
 }
 
 .simditor-body h1,
-.topic-body h1 {
+.topic-body h1,
+.notic-body h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
 .simditor-body img,
-.topic-body img {
+.topic-body img,
+.notic-body img {
   border: 0;
 }
 
 .simditor-body hr,
-.topic-body hr {
+.topic-body hr,
+.notic-body hr {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   height: 0;
 }
 
 .simditor-body table,
-.topic-body table {
+.topic-body table,
+.notic-body table {
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -8569,18 +8626,22 @@ body {
 .simditor-body td,
 .simditor-body th,
 .topic-body td,
-.topic-body th {
+.topic-body th,
+.notic-body td,
+.notic-body th {
   padding: 0;
 }
 
 .simditor-body *,
-.topic-body * {
+.topic-body *,
+.notic-body * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 .simditor-body a,
-.topic-body a {
+.topic-body a,
+.notic-body a {
   text-decoration: none;
 }
 
@@ -8589,12 +8650,16 @@ body {
 .simditor-body a:active,
 .topic-body a:hover,
 .topic-body a:focus,
-.topic-body a:active {
+.topic-body a:active,
+.notic-body a:hover,
+.notic-body a:focus,
+.notic-body a:active {
   text-decoration: none;
 }
 
 .simditor-body hr,
-.topic-body hr {
+.topic-body hr,
+.notic-body hr {
   height: 0;
   margin: 15px 0;
   overflow: hidden;
@@ -8606,67 +8671,81 @@ body {
 .simditor-body hr:before,
 .simditor-body hr:after,
 .topic-body hr:before,
-.topic-body hr:after {
+.topic-body hr:after,
+.notic-body hr:before,
+.notic-body hr:after {
   display: table;
   content: " ";
 }
 
 .simditor-body hr:after,
-.topic-body hr:after {
+.topic-body hr:after,
+.notic-body hr:after {
   clear: both;
 }
 
 .simditor-body blockquote,
-.topic-body blockquote {
+.topic-body blockquote,
+.notic-body blockquote {
   margin: 0;
 }
 
 .simditor-body ul,
 .simditor-body ol,
 .topic-body ul,
-.topic-body ol {
+.topic-body ol,
+.notic-body ul,
+.notic-body ol {
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .simditor-body ol ol,
-.topic-body ol ol {
+.topic-body ol ol,
+.notic-body ol ol {
   list-style-type: lower-roman;
 }
 
 .simditor-body dd,
-.topic-body dd {
+.topic-body dd,
+.notic-body dd {
   margin-left: 0;
 }
 
 .simditor-body code,
 .simditor-body pre,
 .topic-body code,
-.topic-body pre {
+.topic-body pre,
+.notic-body code,
+.notic-body pre {
   font-family: monaco, Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 1em;
 }
 
 .simditor-body pre,
-.topic-body pre {
+.topic-body pre,
+.notic-body pre {
   margin-top: 0;
   margin-bottom: 0;
   overflow: auto;
 }
 
 .simditor-body .topic-body > *:first-child,
-.topic-body .topic-body > *:first-child {
+.topic-body .topic-body > *:first-child,
+.notic-body .topic-body > *:first-child {
   margin-top: 0 !important;
 }
 
 .simditor-body .topic-body > *:last-child,
-.topic-body .topic-body > *:last-child {
+.topic-body .topic-body > *:last-child,
+.notic-body .topic-body > *:last-child {
   margin-bottom: 0 !important;
 }
 
 .simditor-body .anchor,
-.topic-body .anchor {
+.topic-body .anchor,
+.notic-body .anchor {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -8678,7 +8757,8 @@ body {
 }
 
 .simditor-body .anchor:focus,
-.topic-body .anchor:focus {
+.topic-body .anchor:focus,
+.notic-body .anchor:focus {
   outline: none;
 }
 
@@ -8693,7 +8773,13 @@ body {
 .topic-body h3,
 .topic-body h4,
 .topic-body h5,
-.topic-body h6 {
+.topic-body h6,
+.notic-body h1,
+.notic-body h2,
+.notic-body h3,
+.notic-body h4,
+.notic-body h5,
+.notic-body h6 {
   position: relative;
   margin-top: 1.0em;
   margin-bottom: 16px;
@@ -8701,7 +8787,8 @@ body {
 }
 
 .simditor-body h1,
-.topic-body h1 {
+.topic-body h1,
+.notic-body h1 {
   padding-bottom: 0.3em;
   font-size: 2.25em;
   line-height: 1.2;
@@ -8709,7 +8796,8 @@ body {
 }
 
 .simditor-body h2,
-.topic-body h2 {
+.topic-body h2,
+.notic-body h2 {
   padding-bottom: 0.3em;
   font-size: 1.3em;
   line-height: 1.225;
@@ -8717,23 +8805,27 @@ body {
 }
 
 .simditor-body h3,
-.topic-body h3 {
+.topic-body h3,
+.notic-body h3 {
   font-size: 1.2em;
   line-height: 1.43;
 }
 
 .simditor-body h4,
-.topic-body h4 {
+.topic-body h4,
+.notic-body h4 {
   font-size: 1.1em;
 }
 
 .simditor-body h5,
-.topic-body h5 {
+.topic-body h5,
+.notic-body h5 {
   font-size: 1.0em;
 }
 
 .simditor-body h6,
-.topic-body h6 {
+.topic-body h6,
+.notic-body h6 {
   font-size: 0.9em;
   color: #777;
 }
@@ -8751,14 +8843,22 @@ body {
 .topic-body ol,
 .topic-body dl,
 .topic-body table,
-.topic-body pre {
+.topic-body pre,
+.notic-body p,
+.notic-body blockquote,
+.notic-body ul,
+.notic-body ol,
+.notic-body dl,
+.notic-body table,
+.notic-body pre {
   margin-top: 0;
   margin-bottom: 0px;
   line-height: 30px;
 }
 
 .simditor-body hr,
-.topic-body hr {
+.topic-body hr,
+.notic-body hr {
   border: 2px dashed #F0F4F6;
   border-bottom: 0px;
   margin: 18px auto;
@@ -8768,7 +8868,9 @@ body {
 .simditor-body ul,
 .simditor-body ol,
 .topic-body ul,
-.topic-body ol {
+.topic-body ol,
+.notic-body ul,
+.notic-body ol {
   padding-left: 2em;
   padding: 10px 20px 10px 30px;
   color: #7d8688;
@@ -8777,23 +8879,28 @@ body {
 .simditor-body ol ol,
 .simditor-body ol ul,
 .topic-body ol ol,
-.topic-body ol ul {
+.topic-body ol ul,
+.notic-body ol ol,
+.notic-body ol ul {
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .simditor-body li > p,
-.topic-body li > p {
+.topic-body li > p,
+.notic-body li > p {
   margin-top: 6px;
 }
 
 .simditor-body dl,
-.topic-body dl {
+.topic-body dl,
+.notic-body dl {
   padding: 0;
 }
 
 .simditor-body dl dt,
-.topic-body dl dt {
+.topic-body dl dt,
+.notic-body dl dt {
   padding: 0;
   margin-top: 6px;
   font-size: 1em;
@@ -8802,13 +8909,15 @@ body {
 }
 
 .simditor-body dl dd,
-.topic-body dl dd {
+.topic-body dl dd,
+.notic-body dl dd {
   padding: 0 16px;
   margin-bottom: 16px;
 }
 
 .simditor-body blockquote,
-.topic-body blockquote {
+.topic-body blockquote,
+.notic-body blockquote {
   font-size: inherit;
   padding: 0 15px;
   color: #777;
@@ -8816,17 +8925,20 @@ body {
 }
 
 .simditor-body blockquote > :first-child,
-.topic-body blockquote > :first-child {
+.topic-body blockquote > :first-child,
+.notic-body blockquote > :first-child {
   margin-top: 20;
 }
 
 .simditor-body blockquote > :last-child,
-.topic-body blockquote > :last-child {
+.topic-body blockquote > :last-child,
+.notic-body blockquote > :last-child {
   margin-bottom: 20;
 }
 
 .simditor-body blockquote,
-.topic-body blockquote {
+.topic-body blockquote,
+.notic-body blockquote {
   margin: 20px 0 !important;
   background-color: #f5f8fc;
   padding: 1rem;
@@ -8835,7 +8947,8 @@ body {
 }
 
 .simditor-body table,
-.topic-body table {
+.topic-body table,
+.notic-body table {
   display: block;
   width: 100%;
   overflow: auto;
@@ -8843,38 +8956,45 @@ body {
 }
 
 .simditor-body table th,
-.topic-body table th {
+.topic-body table th,
+.notic-body table th {
   font-weight: bold;
 }
 
 .simditor-body table th,
 .simditor-body table td,
 .topic-body table th,
-.topic-body table td {
+.topic-body table td,
+.notic-body table th,
+.notic-body table td {
   padding: 6px 13px;
   border: 1px solid #ddd;
 }
 
 .simditor-body table tr,
-.topic-body table tr {
+.topic-body table tr,
+.notic-body table tr {
   background-color: #fff;
   border-top: 1px solid #ccc;
 }
 
 .simditor-body table tr:nth-child(2n),
-.topic-body table tr:nth-child(2n) {
+.topic-body table tr:nth-child(2n),
+.notic-body table tr:nth-child(2n) {
   background-color: #f8f8f8;
 }
 
 .simditor-body img,
-.topic-body img {
+.topic-body img,
+.notic-body img {
   max-width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 .simditor-body img,
-.topic-body img {
+.topic-body img,
+.notic-body img {
   border: 1px solid #ddd;
   box-shadow: 0 0 30px #ccc;
   -moz-box-shadow: 0 0 30px #ccc;
@@ -8884,7 +9004,8 @@ body {
 }
 
 .simditor-body code,
-.topic-body code {
+.topic-body code,
+.notic-body code {
   background: rgba(90, 87, 87, 0);
   margin: 5px;
   color: #858080;
@@ -8900,13 +9021,16 @@ body {
 .simditor-body code:before,
 .simditor-body code:after,
 .topic-body code:before,
-.topic-body code:after {
+.topic-body code:after,
+.notic-body code:before,
+.notic-body code:after {
   letter-spacing: -0.2em;
   content: "\A0";
 }
 
 .simditor-body pre > code,
-.topic-body pre > code {
+.topic-body pre > code,
+.notic-body pre > code {
   padding: 0;
   margin: 0;
   font-size: 100%;
@@ -8916,14 +9040,17 @@ body {
 }
 
 .simditor-body .highlight,
-.topic-body .highlight {
+.topic-body .highlight,
+.notic-body .highlight {
   margin-bottom: 16px;
 }
 
 .simditor-body .highlight pre,
 .simditor-body pre,
 .topic-body .highlight pre,
-.topic-body pre {
+.topic-body pre,
+.notic-body .highlight pre,
+.notic-body pre {
   padding: 14px;
   overflow: auto;
   line-height: 1.45;
@@ -8933,17 +9060,20 @@ body {
 }
 
 .simditor-body .highlight pre,
-.topic-body .highlight pre {
+.topic-body .highlight pre,
+.notic-body .highlight pre {
   margin-bottom: 0;
 }
 
 .simditor-body pre,
-.topic-body pre {
+.topic-body pre,
+.notic-body pre {
   word-wrap: normal;
 }
 
 .simditor-body pre code,
-.topic-body pre code {
+.topic-body pre code,
+.notic-body pre code {
   display: block;
   padding: 0;
   margin: 0;
@@ -8957,7 +9087,9 @@ body {
 .simditor-body pre code:before,
 .simditor-body pre code:after,
 .topic-body pre code:before,
-.topic-body pre code:after {
+.topic-body pre code:after,
+.notic-body pre code:before,
+.notic-body pre code:after {
   content: normal;
 }
 
