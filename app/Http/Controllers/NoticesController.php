@@ -14,9 +14,9 @@ class NoticesController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-	public function index()
+	public function index(Request $request, Notice $notice)
 	{
-		$notices = Notice::with('user', 'department')->paginate(30);
+		$notices = $notice->withOrder($request->order)->paginate(15);
 		return view('notices.index', compact('notices'));
 	}
 
