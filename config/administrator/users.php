@@ -47,6 +47,10 @@ return [
             },
         ],
 
+        'is_admin' =>[
+            'title' => '发表公告权限'
+        ],
+
         'email' => [
             'title' => '邮箱',
         ],
@@ -71,6 +75,11 @@ return [
             // 表单使用 input 类型 password
             'type' => 'password',
         ],
+
+        'is_admin' =>[
+            'title' => '发表公告权限'
+        ],
+
         'avatar' => [
             'title' => '用户头像',
 

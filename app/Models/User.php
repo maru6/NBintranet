@@ -64,11 +64,6 @@ class User extends Authenticatable
         return $this->hasMany(Reply::class);
     }
 
-    public function category()
-    {
-        return $this->hasMany(category::class);
-    }
-
     public function markAsRead()
     {
         $this->notification_count = 0;
