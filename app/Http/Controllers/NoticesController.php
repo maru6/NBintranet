@@ -6,6 +6,9 @@ use App\Models\Notice;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NoticeRequest;
+use App\Models\Department;
+use Auth;
+use App\Handlers\ImageUploadHandler;
 
 class NoticesController extends Controller
 {
@@ -27,13 +30,16 @@ class NoticesController extends Controller
 
 	public function create(Notice $notice)
 	{
-		return view('notices.create_and_edit', compact('notice'));
+        $departments = department::all();
+		return view('notices.create_and_edit', compact('notice', 'departments'));
 	}
 
-	public function store(NoticeRequest $request)
+	public function store(NoticeRequest $request, Notice $notice)
 	{
-		$notice = Notice::create($request->all());
-		return redirect()->route('notices.show', $notice->id)->with('message', 'Created successfully.');
+		$notice->fill($request->all());
+        $notice->user_id = Auth::id();
+        $notice->save();
+		return redirect()->route('notices.show', $notice->id)->with('message', '成功创建公告！');
 	}
 
 	public function edit(Notice $notice)
@@ -47,7 +53,7 @@ class NoticesController extends Controller
 		$this->authorize('update', $notice);
 		$notice->update($request->all());
 
-		return redirect()->route('notices.show', $notice->id)->with('message', 'Updated successfully.');
+		return redirect()->route('notices.show', $notice->id)->with('message', '更新成功！');
 	}
 
 	public function destroy(Notice $notice)
@@ -55,6 +61,28 @@ class NoticesController extends Controller
 		$this->authorize('destroy', $notice);
 		$notice->delete();
 
-		return redirect()->route('notices.index')->with('message', 'Deleted successfully.');
+		return redirect()->route('notices.index')->with('message', '成功删除！');
 	}
+
+        public function uploadImage(Request $request, ImageUploadHandler $uploader)
+    {
+        // 初始化返回数据，默认是失败的
+        $data = [
+            'success'   => false,
+            'msg'       => '上传失败!',
+            'file_path' => ''
+        ];
+        // 判断是否有上传文件，并赋值给 $file
+        if ($file = $request->upload_file) {
+            // 保存图片到本地
+            $result = $uploader->save($request->upload_file, 'notices', \Auth::id(), 1024);
+            // 图片保存成功的话
+            if ($result) {
+                $data['file_path'] = $result['path'];
+                $data['msg']       = "上传成功!";
+                $data['success']   = true;
+            }
+        }
+        return $data;
+    }
 }

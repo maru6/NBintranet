@@ -8361,7 +8361,7 @@ body {
   background-color: #fff;
   -webkit-box-shadow: 0px 1px 11px 2px rgba(42, 42, 42, 0.1);
           box-shadow: 0px 1px 11px 2px rgba(42, 42, 42, 0.1);
-  border-top: 4px solid #b50e05;
+  border-top: 4px solid #bf5329;
   margin-bottom: 40px;
   margin-top: 0px;
 }
@@ -9093,11 +9093,13 @@ body {
   content: normal;
 }
 
-.topics-show-page .panel {
+.topics-show-page .panel,
+.notices-show-page .panel {
   padding: 15px;
 }
 
-.topics-show-page .panel h1 {
+.topics-show-page .panel h1,
+.notices-show-page .panel h1 {
   margin: 0.4em auto 0.6em;
   font-size: 28px;
   line-height: 38px;

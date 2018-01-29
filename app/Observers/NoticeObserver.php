@@ -9,13 +9,9 @@ use App\Models\Notice;
 
 class NoticeObserver
 {
-    public function creating(Notice $notice)
+    public function saving(Notice $notice)
     {
-        //
+        $notice->excerpt = make_excerpt($notice->body);
     }
 
-    public function updating(Notice $notice)
-    {
-        //
-    }
 }
