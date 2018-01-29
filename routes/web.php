@@ -24,7 +24,7 @@ Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'st
 
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 
-Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
+Route::post('topic_upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
 
 Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
 
@@ -37,4 +37,4 @@ Route::get('permission-denied', 'PagesController@permissionDenied')->name('permi
 Route::resource('notices', 'NoticesController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 Route::resource('departments', 'DepartmentsController', ['only' => ['show']]);
 
-Route::post('upload_image', 'NoticesController@uploadImage')->name('notices.upload_image');
+Route::post('notice_upload_image', 'NoticesController@uploadImage')->name('notices.upload_image');

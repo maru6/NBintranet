@@ -11,6 +11,7 @@ class NoticeObserver
 {
     public function saving(Notice $notice)
     {
+        $notice->body = clean($notice->body, 'user_notice_body');
         $notice->excerpt = make_excerpt($notice->body);
     }
 
