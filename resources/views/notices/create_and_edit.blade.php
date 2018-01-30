@@ -35,9 +35,9 @@
 
                     <div class="form-group">
                         <select class="form-control" name="department_id" required>
-                            <option value="" hidden disabled selected>请选择部门</option>
+                            <option value="" hidden disabled {{ $notice->id ? '' : 'selected' }}>请选择部门</option>
                             @foreach ($departments as $value)
-                                <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                <option value="{{ $value->id }}" {{ $notice->department_id == $value->id ? 'selected' : '' }}>{{ $value->name }}</option>
                             @endforeach
                         </select>
                     </div>

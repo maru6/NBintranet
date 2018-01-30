@@ -9,8 +9,7 @@ class NoticePolicy extends Policy
 {
     public function update(User $user, Notice $notice)
     {
-        // return $notice->user_id == $user->id;
-        return true;
+        return $notice->user_id == $user->id;
     }
 
     public function destroy(User $user, Notice $notice)

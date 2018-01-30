@@ -45,7 +45,8 @@ class NoticesController extends Controller
 	public function edit(Notice $notice)
 	{
         $this->authorize('update', $notice);
-		return view('notices.create_and_edit', compact('notice'));
+        $departments = department::all();
+		return view('notices.create_and_edit', compact('notice', 'departments'));
 	}
 
 	public function update(NoticeRequest $request, Notice $notice)
