@@ -9,11 +9,11 @@ class NoticePolicy extends Policy
 {
     public function update(User $user, Notice $notice)
     {
-        return $notice->user_id == $user->id;
+       return $user->isAuthorOf($notice);
     }
 
     public function destroy(User $user, Notice $notice)
     {
-        return true;
+       return $user->isAuthorOf($notice);
     }
 }
