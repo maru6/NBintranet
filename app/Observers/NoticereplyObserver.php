@@ -24,4 +24,10 @@ class NoticereplyObserver
     {
         $noticereply->content = clean($noticereply->content, 'user_notice_body');
     }
+
+    public function deleted(Noticereply $noticereply)
+    {
+        $noticereply->topic->decrement('reply_count', 1);
+    }
+
 }

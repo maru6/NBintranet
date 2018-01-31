@@ -15,4 +15,8 @@ class NoticeObserver
         $notice->excerpt = make_excerpt($notice->body);
     }
 
+    public function deleted(Notice $notice)
+    {
+        \DB::table('noticereplies')->where('notice_id', $notice->id)->delete();
+    }
 }
