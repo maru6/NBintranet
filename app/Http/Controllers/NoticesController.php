@@ -30,16 +30,26 @@ class NoticesController extends Controller
 
 	public function create(Notice $notice)
 	{
-        $departments = department::all();
-		return view('notices.create_and_edit', compact('notice', 'departments'));
+        if(Auth::user()->is_admin)
+        {
+            $departments = department::all();
+        	return view('notices.create_and_edit', compact('notice', 'departments'));
+        }
+         return redirect()->to($notice->link())->with('message', '你不是管理員，不能发表文章！');
 	}
 
 	public function store(NoticeRequest $request, Notice $notice)
 	{
-		$notice->fill($request->all());
-        $notice->user_id = Auth::id();
-        $notice->save();
-		return redirect()->route('notices.show', $notice->id)->with('message', '成功创建公告！');
+        if(Auth::user()->is_admin)
+        {
+    		$notice->fill($request->all());
+            $notice->user_id = Auth::id();
+            $notice->save();
+
+    		return redirect()->route('notices.show', $notice->id)->with('message', '成功创建公告！');
+        }
+        return redirect()->to($topic->link())->with('message', '你不是管理員，不能发文章！');
+
 	}
 
 	public function edit(Notice $notice)

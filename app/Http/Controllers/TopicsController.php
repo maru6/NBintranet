@@ -45,21 +45,18 @@ class TopicsController extends Controller
 
     public function create(Topic $topic)
 	{
-        if(Auth::user()->is_admin){
-            $categories = Category::all();
-    		return view('topics.create_and_edit', compact('topic','categories'));
-        } return redirect()->to($topic->link())->with('message', '你不是管理員，不能发文章！');
+        $categories = Category::all();
+		return view('topics.create_and_edit', compact('topic','categories'));
 	}
 
 	public function store(TopicRequest $request, Topic $topic)
 	{
-        if(Auth::user()->is_admin){
+
         $topic->fill($request->all());
         $topic->user_id = Auth::id();
         $topic->save();
 
 		return redirect()->to($topic->link())->with('message', '成功创建话题！');
-        } return redirect()->to($topic->link())->with('message', '你不是管理員，不能发文章！');
 	}
 
 	public function edit(Topic $topic)
