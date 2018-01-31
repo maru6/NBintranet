@@ -20,6 +20,10 @@ class TopicReplied extends Notification implements ShouldQueue
         $this->reply = $reply;
     }
 
+    // 每个通知类都有个 via() 方法，它决定了通知在哪个频道上发送。我们写上 database 数据库来作为通知频道。
+    //
+    // 因为使用数据库通知频道，我们需要定义 toDatabase()。这个方法接收 $notifiable 实例参数
+    // 并返回一个普通的 PHP 数组。这个返回的数组将被转成 JSON 格式并存储到通知数据表的 data 字段中。
     public function via($notifiable)
     {
         // 开启通知的频道

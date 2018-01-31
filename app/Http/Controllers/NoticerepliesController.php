@@ -6,6 +6,7 @@ use App\Models\Noticereply;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NoticereplyRequest;
+use Auth;
 
 class NoticerepliesController extends Controller
 {
@@ -14,21 +15,21 @@ class NoticerepliesController extends Controller
         $this->middleware('auth');
     }
 
-	public function store(ReplyRequest $request, Reply $reply)
+	public function store(NoticereplyRequest $request, Noticereply $noticereply)
 	{
-		// $reply->content = $request->content;
-        // $reply->user_id = Auth::id();
-        // $reply->notice_id = $request->notice_id;
-        // $reply->save();
-        //
-		// return redirect()->to($reply->notice->link())->with('message', '创建成功！');
+		$noticereply->content = $request->content;
+        $noticereply->user_id = Auth::id();
+        $noticereply->notice_id = $request->notice_id;
+        $noticereply->save();
+
+		return redirect()->to($noticereply->notice->link())->with('message', '创建成功！');
 	}
 
-	public function destroy(Reply $reply)
+	public function destroy(Noticereply $noticereply)
 	{
-		// $this->authorize('destroy', $reply);
-		// $reply->delete();
-        //
-		// return redirect()->to($reply->notice->link())->with('message', '删除成功！');
+		$this->authorize('destroy', $noticereply);
+		$noticereply->delete();
+
+		return redirect()->to($noticereply->notice->link())->with('message', '删除成功！');
 	}
 }
