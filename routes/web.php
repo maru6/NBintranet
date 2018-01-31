@@ -38,3 +38,5 @@ Route::resource('notices', 'NoticesController', ['only' => ['index', 'show', 'cr
 Route::resource('departments', 'DepartmentsController', ['only' => ['show']]);
 
 Route::post('notice_upload_image', 'NoticesController@uploadImage')->name('notices.upload_image');
+
+Route::resource('noticereplies', 'NoticerepliesController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);

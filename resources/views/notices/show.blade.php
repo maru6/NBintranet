@@ -62,6 +62,15 @@
 
             </div>
         </div>
+
+        {{-- 用户回复列表 --}}
+        <div class="panel panel-default notice-reply">
+            <div class="panel-body">
+                @include('notices._noticereply_box', ['notice' => $notice])
+                @include('notices._noticereply_list', ['noticereplies' => $notice->noticereplies()->with('user')->get()])
+            </div>
+        </div>
+
     </div>
 </div>
 @stop

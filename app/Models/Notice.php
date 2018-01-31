@@ -6,6 +6,10 @@ class Notice extends Model
 {
     protected $fillable = ['title', 'body', 'department_id', 'excerpt', 'slug'];
 
+    public function noticereplies()
+    {
+        return $this->hasMany(Noticereply::class);
+    }
     public function department()
     {
         return $this->belongsTo(Department::class);
@@ -42,5 +46,10 @@ class Notice extends Model
     public function scopeRecent($query)
     {
       return $query->orderBy('created_at', 'desc');
+    }
+
+    public function link($params = [])
+    {
+        return route('notices.show', array_merge([$this->id, $this->slug],$params));
     }
 }

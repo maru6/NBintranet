@@ -46,15 +46,16 @@
                     <li class="{{ active_class(if_query('tab', null)) }}">
                         <a href="{{ route('users.show', $user->id) }}">Ta 的话题</a>
                     </li>
+                    <li class="{{ active_class(if_query('tab', 'noticereplies')) }}">
+                        <a href="{{ route('users.show', [$user->id, 'tab' => 'noticereplies']) }}">Ta 的公告回复</a>
+                    </li>
                     <li class="{{ active_class(if_query('tab', 'replies')) }}">
                         <a href="{{ route('users.show', [$user->id, 'tab' => 'replies']) }}">Ta 的话题回复</a>
                     </li>
-                    <li>
-                        <a href="#">Ta 的新闻回复</a>
-                    </li>
-
                 </ul>
-                @if (if_query('tab', 'replies'))
+                @if (if_query('tab', 'noticereplies'))
+                    @include('users._noticereplies', ['noticereplies' => $user->noticereplies()->with('notice')->recent()->paginate(5)])
+                @elseif (if_query('tab', 'replies'))
                     @include('users._replies', ['replies' => $user->replies()->with('topic')->recent()->paginate(5)])
                 @else
                     @include('users._topics', ['topics' => $user->topics()->recent()->paginate(5)])

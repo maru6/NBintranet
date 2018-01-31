@@ -9105,16 +9105,19 @@ body {
   line-height: 38px;
 }
 
-.topic-reply hr {
+.topic-reply hr,
+.notice-reply hr {
   margin-top: 16px;
   margin-bottom: 16px;
 }
 
-.topic-reply a {
+.topic-reply a,
+.notice-reply a {
   color: inherit;
 }
 
-.topic-reply .meta {
+.topic-reply .meta,
+.notice-reply .meta {
   font-size: .9em;
   color: #b3b3b3;
 }

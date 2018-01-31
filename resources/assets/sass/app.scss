@@ -155,7 +155,7 @@ body {
 
 /* Topic Show Page */
 
-@import "topic_body";
+@import "topic_notice_body";
 
 .topics-show-page, .notices-show-page {
 
@@ -170,7 +170,7 @@ body {
     }
 }
 
-.topic-reply {
+.topic-reply, .notice-reply {
     hr {
         margin-top: 16px;
         margin-bottom: 16px;
