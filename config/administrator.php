@@ -42,10 +42,15 @@ return array(
             'roles',
             'permissions',
         ],
-        '内容管理' => [
+        '话题管理' => [
             'categories',
             'topics',
             'replies',
+        ],
+        '公告管理' => [
+            'departments',
+            'notices',
+            'noticereplies',
         ],
         '站点管理' => [
             'settings.site',

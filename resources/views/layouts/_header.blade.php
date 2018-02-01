@@ -21,16 +21,28 @@
             <!-- Left Side Of Navbar -->
 
              <ul class="nav navbar-nav">
-                        <li class="{{ active_class(if_route('notices.index')) }}"><a href="{{ route('notices.index') }}">公告</a></li>
+                        <li class="{{ active_class(if_route('notices.index')) }}"><a href="{{ route('notices.index') }}">内网公告</a></li>
              			<li class="dropdown">
              				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
              					部室
              					<b class="caret"></b>
              				</a>
              				<ul class="dropdown-menu">
-                                <li class="{{ active_class((if_route('departments.show') && if_route_param('department', 1))) }}"><a href="{{ route('departments.show', 1) }}">总经办</a></li>
-                                <li class="{{ active_class((if_route('departments.show') && if_route_param('department', 1))) }}"><a href="{{ route('departments.show', 2) }}">人力资源</a></li>
-                                <li class="{{ active_class((if_route('departments.show') && if_route_param('department', 1))) }}"><a href="{{ route('departments.show', 4) }}">信息管理</a></li>
+                                <li class="{{ active_class((if_route('departments.show') && if_route_param('department', 1))) }}"><a href="{{ route('departments.show', 1) }}">总经理办公室</a></li>
+                                <li class="{{ active_class((if_route('departments.show') && if_route_param('department', 2))) }}"><a href="{{ route('departments.show', 2) }}">人力资源</a></li>
+                                <li class="{{ active_class((if_route('departments.show') && if_route_param('department', 4))) }}"><a href="{{ route('departments.show', 4) }}">信息管理</a></li>
+             				</ul>
+             			</li>
+             			<li class="dropdown">
+             				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+             				    门店
+             					<b class="caret"></b>
+             				</a>
+             				<ul class="dropdown-menu">
+                                <li class="{{ active_class((if_route('departments.show') && if_route_param('department', 3))) }}"><a href="{{ route('departments.show', 3) }}">朝阳店</a></li>
+                                <li class="{{ active_class((if_route('departments.show') && if_route_param('department', 5))) }}"><a href="{{ route('departments.show', 5) }}">新世界店</a></li>
+                                <li class="{{ active_class((if_route('departments.show') && if_route_param('department', 6))) }}"><a href="{{ route('departments.show', 6) }}">贺州店</a></li>
+                                <li class="{{ active_class((if_route('departments.show') && if_route_param('department', 7))) }}"><a href="{{ route('departments.show', 7) }}">贵港店</a></li>
              				</ul>
              			</li>
 
@@ -65,11 +77,13 @@
                     <li><a href="{{ route('login') }}">登录</a></li>
                     <li><a href="{{ route('register') }}">注册</a></li>
                 @else
+                @if(Auth::user()->is_admin)
                 <li>
-                    <a href="{{ route('topics.create') }}">
+                    <a href="{{ route('notices.create') }}">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </a>
                 </li>
+                @endif
                 {{-- 消息通知标记 --}}
                 <li>
                     <a href="{{ route('notifications.index') }}" class="notifications-badge" style="margin-top: -2px;">
