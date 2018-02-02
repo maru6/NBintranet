@@ -21,7 +21,7 @@
             <!-- Left Side Of Navbar -->
 
              <ul class="nav navbar-nav">
-                        <li class="{{ active_class(if_route('notices.index')) }}"><a href="{{ route('notices.index') }}">内网公告</a></li>
+                        <li class="{{ active_class(if_route('notices.index')) }}"><a href="{{ route('notices.index') }}">公告列表</a></li>
              			<li class="dropdown">
              				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
              					部室

@@ -11,9 +11,13 @@
                 <div class="media-body">
 
                     <div class="media-heading">
-                        <a href="{{ route('notices.show', [$notice->id]) }}" title="{{ $notice->title }}">
+                        <a href="{{ route('notices.show', [$notice->id]) }}" class=" badge-{{ $notice->sticky_post ? 'bright' : 'normal' }}"  title="{{ $notice->title }}">
+                            @if($notice->sticky_post)
+                            <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+                            @endif
                              {{ $notice->title }}
                         </a>
+
                         <a class="pull-right" href="{{ route('notices.show', [$notice->id]) }}" >
                             <span class="badge"> 回复{{ $notice->reply_count }} </span>
                         </a>

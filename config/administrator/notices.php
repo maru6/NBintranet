@@ -38,6 +38,9 @@ return [
         'reply_count' => [
             'title'    => '评论',
         ],
+        'sticky_post' => [
+            'title' => '置顶权重',
+        ],
         'operation' => [
             'title'  => '管理',
             'sortable' => false,
@@ -74,6 +77,9 @@ return [
         ],
         'view_count' => [
             'title'    => '查看',
+        ],
+        'sticky_post' => [
+            'title' => '输入数字置顶',
         ],
     ],
     'filters' => [

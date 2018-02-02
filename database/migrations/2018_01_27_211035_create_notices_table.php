@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNoticesTable extends Migration 
+class CreateNoticesTable extends Migration
 {
 	public function up()
 	{
@@ -16,6 +16,7 @@ class CreateNoticesTable extends Migration
             $table->integer('reply_count')->unsigned()->default(0);
             $table->integer('view_count')->unsigned()->default(0);
             $table->integer('last_reply_user_id')->unsigned()->default(0);
+            $table->boolean('sticky_post')->default(false);
             $table->integer('order')->unsigned()->default(0);
             $table->text('excerpt');
             $table->string('slug')->nullable();

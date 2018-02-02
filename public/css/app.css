@@ -8491,7 +8491,7 @@ body {
 .notices-index-page .notice-list a,
 .departments-show-page .topic-list a,
 .departments-show-page .notice-list a {
-  color: #444444;
+  color: #333333;
 }
 
 .categories-show-page .topic-list .meta,
@@ -8548,6 +8548,32 @@ body {
   margin-bottom: 12px;
   border: 0;
   border-top: 1px solid #dcebf5;
+}
+
+.categories-show-page .topic-list .media-heading .badge-normal,
+.categories-show-page .notice-list .media-heading .badge-normal,
+.topics-index-page .topic-list .media-heading .badge-normal,
+.topics-index-page .notice-list .media-heading .badge-normal,
+.root-page .topic-list .media-heading .badge-normal,
+.root-page .notice-list .media-heading .badge-normal,
+.notices-index-page .topic-list .media-heading .badge-normal,
+.notices-index-page .notice-list .media-heading .badge-normal,
+.departments-show-page .topic-list .media-heading .badge-normal,
+.departments-show-page .notice-list .media-heading .badge-normal {
+  color: #333333;
+}
+
+.categories-show-page .topic-list .media-heading .badge-bright,
+.categories-show-page .notice-list .media-heading .badge-bright,
+.topics-index-page .topic-list .media-heading .badge-bright,
+.topics-index-page .notice-list .media-heading .badge-bright,
+.root-page .topic-list .media-heading .badge-bright,
+.root-page .notice-list .media-heading .badge-bright,
+.notices-index-page .topic-list .media-heading .badge-bright,
+.notices-index-page .notice-list .media-heading .badge-bright,
+.departments-show-page .topic-list .media-heading .badge-bright,
+.departments-show-page .notice-list .media-heading .badge-bright {
+  color: #f10a0a !important;
 }
 
 /* Topic Show Page */

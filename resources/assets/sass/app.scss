@@ -132,7 +132,7 @@ body {
             font-size: 0.9em;
         }
         a {
-            color: #444444;
+            color: #333333;
         }
         .meta {
             font-size:0.9em;
@@ -149,6 +149,15 @@ body {
             margin-bottom: 12px;
             border: 0;
             border-top: 1px solid #dcebf5;
+        }
+        .media-heading {
+                .badge-normal {
+                    color: #333333;
+                }
+
+                .badge-bright {
+                    color: #f10a0a !important;
+                }
         }
     }
 }
