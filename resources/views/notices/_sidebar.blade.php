@@ -1,7 +1,13 @@
 <div class="panel panel-default">
     <div class="panel-body">
-        <a href="{{ route('notices.create') }}" class="btn btn-danger btn-block" aria-label="Left Align">
-            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 发表公告
-        </a>
+        <ul class="list-group text-center">
+            <li class="list-group-item active">
+                导航
+            </li>
+            <a class="btn btn-default btn-block" href="http://mail.nnbh.net">OA邮箱</a></li>
+            <a class="btn btn-default btn-block" href="http://www.mmgo.com">MMGO</a></li>
+            <a class="btn btn-default btn-block" href="http://nb.nnbh.cn">南百外网</a></li>
+            <a class="btn btn-default btn-block" href="http://mail.nnbh.com">OA-OLD</a></li>
+        </ul>
     </div>
 </div>

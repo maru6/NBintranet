@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
-@section('title', '新闻公告')
+@section('title', '首页')
 
 @section('content')
+
 
 <div class="row">
     <div class="col-lg-9 col-md-9 notice-list">
@@ -15,8 +16,10 @@
 
 
         <div class="panel panel-default">
-
             <div class="panel-heading">
+                {{-- 轮播图 --}}
+                @include('home._carousel')
+                <hr>
                 <ul class="nav nav-pills">
                     <li class="{{ active_class(( ! if_query('order', 'recentReplied') )) }}"><a href="{{ Request::url() }}?order=default">最新发布</a></li>
                     <li class="{{ active_class(if_query('order', 'recentReplied')) }}"><a href="{{ Request::url() }}?order=recentReplied">最后回复</a></li>
@@ -37,5 +40,4 @@
         @include('notices._sidebar')
     </div>
 </div>
-
 @endsection

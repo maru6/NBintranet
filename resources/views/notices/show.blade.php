@@ -6,26 +6,7 @@
 @section('content')
 
 <div class="row">
-
-    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs author-info">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="text-center">
-                    作者：{{ $notice->user->name }}
-                </div>
-                <hr>
-                <div class="media">
-                    <div align="center">
-                        <a href="{{ route('users.show', $notice->user->id) }}">
-                            <img class="thumbnail img-responsive" src="{{ $notice->user->avatar }}" width="300px" height="300px">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 notice-content">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 notice-content">
         <div class="panel panel-default">
             <div class="panel-body">
                 <h1 class="text-center">
@@ -34,6 +15,11 @@
 
                 <div class="article-meta text-center">
                     {{ $notice->created_at }}
+                    ⋅
+                    <a href="{{ route('users.show', [$notice->user_id]) }}" title="{{ $notice->user->name }}"  style="color: #636b6f">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        {{ $notice->user->name }}
+                    </a>
                     ⋅
                     <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
                     {{ $notice->reply_count }}

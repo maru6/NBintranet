@@ -19,7 +19,7 @@
                         </a>
 
                         <a class="pull-right" href="{{ route('notices.show', [$notice->id]) }}" >
-                            <span class="badge"> 回复{{ $notice->reply_count }} </span>
+                            <span class="badge"> {{ $notice->reply_count }} </span>
                         </a>
                     </div>
 
@@ -28,12 +28,6 @@
                         <a href="{{ route('departments.show', $notice->department->id) }}" title="{{ $notice->department->name }}">
                             <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                              {{ $notice->department->name }}
-                        </a>
-
-                        <span> • </span>
-                        <a href="{{ route('users.show', [$notice->user_id]) }}" title="{{ $notice->user->name }}">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            {{ $notice->user->name }}
                         </a>
                         <span> • </span>
                         <span class="glyphicon glyphicon-time" aria-hidden="true"></span>

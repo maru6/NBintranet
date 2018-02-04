@@ -1,6 +1,8 @@
 <?php
 
-Route::get('/', 'NoticesController@index')->name('root');
+Route::get('/', 'HomeController@index')->name('root');
+
+Route::get('home', 'HomeController@index')->name('home');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
